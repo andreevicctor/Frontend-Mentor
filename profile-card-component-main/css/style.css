@@ -1,0 +1,139 @@
+/* mini reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.dark-grey {
+    color: hsl(0, 0%, 59%);
+    font-weight: normal;
+    font-weight: 400;
+}
+
+.very-dark-grey {
+    color: hsl(229, 23%, 23%);
+    font-weight: 700;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(185, 75%, 39%);
+    overflow: hidden;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: -18rem;
+    left: -5rem;
+    width: 700px;
+    height: 700px;
+    background-size: cover;
+    background-image: url(../images/bg-pattern-top.svg);
+    background-repeat: no-repeat;
+}
+
+main::after {
+    content: '';
+    position: absolute;
+    bottom: -23rem;
+    right: -12rem;
+    width: 900px;
+    height: 700px;
+    background-size: cover;
+    background-image: url(../images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+main .card {
+    margin-top: 10rem;
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.card .card-header {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-image: url(../images/bg-pattern-card.svg);
+    background-size: cover;
+    height: 8rem;
+    width: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+main .card-header img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: -2.6rem;
+}
+
+main .card-body {
+    background-color: #fff;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+main .card-body .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+main .card-body .info p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+main .card-body hr {
+    margin-top: 1.3rem;
+    height: 1px;
+    background-color: lightgray;
+    border: none;
+}
+
+main .card-body .social {
+    padding: 0.5rem 0 1rem 0;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+main .card-body .social p {
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    letter-spacing: 1px;
+}
+
+@media screen and (max-width: 960px) {
+    
+    main .card {
+        margin-top: 8rem;
+    }
+
+    main::before {
+        transform: translate3d(-25rem, -10rem, 0) rotate(-15deg);
+    }
+
+    main::after {
+        right: 0;
+        width: 70%;
+    }
+
+}
