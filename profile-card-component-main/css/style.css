@@ -19,40 +19,32 @@
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: hsl(185, 75%, 39%);
     overflow: hidden;
     font-family: 'Kumbh Sans', sans-serif;
 }
 
-main::before {
-    content: '';
-    position: absolute;
-    top: -18rem;
-    left: -5rem;
-    width: 700px;
-    height: 700px;
-    background-size: cover;
-    background-image: url(../images/bg-pattern-top.svg);
-    background-repeat: no-repeat;
-}
-
-main::after {
-    content: '';
-    position: absolute;
-    bottom: -23rem;
-    right: -12rem;
-    width: 900px;
-    height: 700px;
-    background-size: cover;
-    background-image: url(../images/bg-pattern-bottom.svg);
-    background-repeat: no-repeat;
-}
-
 main {
     display: flex;
     justify-content: center;
+}
+
+#img1 {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: -50%;
+    left: 0;
+}
+
+#img2 {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 50%;
+    right: 0;
 }
 
 main .card {
@@ -119,21 +111,4 @@ main .card-body .social p {
     font-size: 0.7rem;
     margin-top: 0.5rem;
     letter-spacing: 1px;
-}
-
-@media screen and (max-width: 960px) {
-    
-    main .card {
-        margin-top: 8rem;
-    }
-
-    main::before {
-        transform: translate3d(-25rem, -10rem, 0) rotate(-15deg);
-    }
-
-    main::after {
-        right: 0;
-        width: 70%;
-    }
-
 }
