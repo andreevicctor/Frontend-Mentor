@@ -78,12 +78,13 @@ main .card-body .info {
 main .card-body .info p {
     margin-top: 0.5rem;
     font-size: 0.7rem;
+    margin-top: 0.5rem;
 }
 
 main .card-body .social {
     border-top: 1px solid rgba(211, 211, 211, 0.61);
     padding: 1.5rem 2rem;
-    margin-top: 1.1rem;
+    margin-top: 1.3rem;
     display: flex;
     justify-content: space-around;
     text-align: center;
