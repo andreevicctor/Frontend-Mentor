@@ -8,7 +8,7 @@
 }
 
 .dark-grey {
-    color: hsl(0, 0%, 59%);
+    color: #69696b;
     font-weight: normal;
     font-weight: 400;
 }
@@ -19,11 +19,14 @@
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: hsl(185, 75%, 39%);
-    overflow: hidden;
     font-family: 'Kumbh Sans', sans-serif;
+    background-image: url(../images/bg-pattern-top.svg), url(../images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/background-position */
+    background-position: right 50vw bottom 40vh, left 50vw top 40vh;
 }
 
 main {
@@ -31,35 +34,19 @@ main {
     justify-content: center;
 }
 
-#img1 {
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    top: -50%;
-    left: 0;
-}
-
-#img2 {
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    top: 50%;
-    right: 0;
-}
-
 main .card {
     margin-top: 10rem;
     z-index: 1;
-    border-radius: 8px;
+    border-radius: .9rem;
+    width: 310px;
 }
 
 .card .card-header {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: .9rem;
+    border-top-right-radius: .9rem;
     background-image: url(../images/bg-pattern-card.svg);
     background-size: cover;
     height: 8rem;
-    width: 310px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,8 +63,8 @@ main .card-header img {
 
 main .card-body {
     background-color: #fff;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: .9rem;
+    border-bottom-right-radius: .9rem;
 }
 
 main .card-body .info {
@@ -89,26 +76,24 @@ main .card-body .info {
 
 main .card-body .info p {
     margin-top: 0.5rem;
-    font-size: 0.9rem;
-}
-
-main .card-body hr {
-    margin-top: 1.3rem;
-    height: 1px;
-    background-color: lightgray;
-    border: none;
+    font-size: 0.7rem;
 }
 
 main .card-body .social {
-    padding: 0.5rem 0 1rem 0;
-    margin-top: 1rem;
+    border-top: 1px solid rgba(211, 211, 211, 0.61);
+    padding: 1.5rem 2rem;
+    margin-top: 1.1rem;
     display: flex;
     justify-content: space-around;
     text-align: center;
 }
 
+main .card-body .social div {
+    width: 52px;
+}
+
 main .card-body .social p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     margin-top: 0.5rem;
     letter-spacing: 1px;
 }
