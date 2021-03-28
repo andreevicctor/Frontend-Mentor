@@ -1,0 +1,194 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+main {
+    width: min(90vw, 1024px);
+    margin: 0 auto;
+    transform: translateY(5rem);
+    background-color: white;
+    border-radius: 1.5rem;
+    display: flex;
+    position: relative;
+}
+
+main::before {
+    content: url(../images/illustration-box-desktop.svg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: translate(-45%, 100%);
+}
+
+.img,
+.faq {
+    flex: 1 1 0px;
+}
+
+.img {
+    overflow: hidden;
+    position: relative;
+}
+
+.img .woman {
+    transform: translate(-15%, 15%);
+}
+
+.img .bg-pattern-desktop {
+    position: absolute;
+    top: 0;
+    left: -21%;
+    width: 100%;
+    z-index: -1;
+}
+
+.img .woman-mobile ,.img .bg-pattern-mobile {
+    display: none;
+}
+
+.faq {
+    padding: 5rem 0 4rem 0;
+}
+
+.faq h2 {
+    font-size: 2rem;
+    color: hsl(238, 29%, 16%);
+    margin-bottom: 2rem;
+}
+
+/* atenção isso é uma classe ;) */
+.details {
+    padding: 0 10rem 0 0;
+
+}
+
+details {
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+}
+
+summary {
+    display: flex;
+    padding: 1rem 0;
+    cursor: pointer;
+    color: hsl(237, 12%, 33%);
+}
+
+summary:hover {
+    color: hsl(14, 88%, 65%);
+}
+
+summary::marker {
+    content: '';
+}
+
+summary::after {
+    margin-left: auto;
+    content: url(../images/icon-arrow-down.svg);
+    transition: .4s;
+}
+
+details[open] summary~* {
+    animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+details[open] summary {
+    font-weight: bold;
+    color: hsl(238, 29%, 16%);
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+details p {
+    text-align: justify;
+    padding-right: 1rem;
+    font-size: 0.8rem;
+    color: hsl(240, 6%, 50%);
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1023px) {
+    main {
+        margin-top: 3rem;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    .img {
+        overflow: visible;
+        height: 120px;
+    }
+
+    .img .woman, .img .bg-pattern-desktop, main::before {
+        display: none;
+    }
+
+    .img .woman-mobile, .img .bg-pattern-mobile {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .img .woman-mobile {
+        transform: translate(-5%, -55%);
+        /* movendo a imagem no eixo X pois nela existe um espaço transparente a esquerda */
+    }
+
+    .img .bg-pattern-mobile {
+        transform: translate(-0%, -195%);
+    }
+
+    .faq {
+        margin-top: .8rem;
+        padding: 0 2rem 2rem;
+    }
+
+    .faq h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .details {
+        padding: 0;
+    }
+
+    details p {
+        margin-top: -0.4rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    details summary {
+        font-size: 12px;
+    }
+
+    details p {
+        font-size: 11px;
+        padding-right: 1.5rem;
+    }
+}
